@@ -12,8 +12,8 @@
   <header>
     <nav class="navbar">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About Me</a></li>
         <li><a href="resume.php" class="active">Resume</a></li>
       </ul>
     </nav>

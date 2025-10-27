@@ -5,16 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Resume | Folusho Morafa</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="javascript/script.js"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script defer src="/javascript/script.js"></script>
 </head>
 <body>
   <header>
     <nav class="navbar">
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About Me</a></li>
-        <li><a href="resume.php" class="active">Resume</a></li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/about.html">About Me</a></li>
+        <li><a href="/php/resume.php" class="active">Resume</a></li>
       </ul>
     </nav>
   </header>

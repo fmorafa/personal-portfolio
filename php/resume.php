@@ -26,7 +26,8 @@
     <p><strong>University of Memphis</strong> – Bachelor of Science in Computer Science (Expected May 2026)</p>
     <p>Relevant Coursework: Data Structures, Web Development, Networks, Programming Languages (Java, Python)</p>
 
-    <h2>Certifications (Dynamic from Database)</h2>
+    <h2>Certifications <!--(Dynamic from Databases)--></h2>
+    
     <table>
       <tr>
         <th>Certification</th>
@@ -34,7 +35,7 @@
         <th>Year</th>
       </tr>
       <?php
-        $sql = "SELECT cert_name, organization, year FROM certifications";
+        $sql = "SELECT cert_name, organization, 'year' FROM certifications";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -49,8 +50,7 @@
           echo "<tr><td colspan='3'>No certifications found.</td></tr>";
         }
 
-        $conn->close();
-      ?>
+        $conn->close();?>
     </table>
 
     <h2>Work Experience</h2>

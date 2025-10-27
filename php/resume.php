@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="/css/style.css" />
   <script defer src="/javascript/script.js"></script>
 </head>
+
 <body>
+  
   <header>
     <nav class="navbar">
       <ul>
@@ -19,15 +21,17 @@
     </nav>
   </header>
 
+  <!-- Main Content -->
   <main class="resume-container">
     <h1>Resume</h1>
 
+    
     <h2>Education</h2>
     <p><strong>University of Memphis</strong> – Bachelor of Science in Computer Science (Expected May 2026)</p>
     <p>Relevant Coursework: Data Structures, Web Development, Networks, Programming Languages (Java, Python)</p>
 
-    <h2>Certifications <!--(Dynamic from Databases)--></h2>
     
+    <h2>Certifications</h2>
     <table>
       <tr>
         <th>Certification</th>
@@ -35,10 +39,12 @@
         <th>Year</th>
       </tr>
       <?php
-        $sql = "SELECT cert_name, organization, 'year' FROM certifications";
+        $sql = "SELECT cert_name, organization, year FROM certifications";
         $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
+        if (!$result) {
+          echo "<tr><td colspan='3'>SQL error: {$conn->error}</td></tr>";
+        } elseif ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
             echo "<tr>
                     <td>{$row['cert_name']}</td>
@@ -49,24 +55,50 @@
         } else {
           echo "<tr><td colspan='3'>No certifications found.</td></tr>";
         }
-
-        $conn->close();?>
+      ?>
     </table>
 
+    
     <h2>Work Experience</h2>
-    <ul>
-      <li><strong>Computer Science TA</strong> – University of Memphis (Jan 2025 – May 2025)</li>
-      <li><strong>IT Intern</strong> – Conrad Pearson Clinic (Jun 2022 – Dec 2022)</li>
-      <li><strong>Sales Associate</strong> – Home Depot (Dec 2020 – Apr 2021)</li>
-    </ul>
+    <table>
+      <tr>
+        <th>Job Title</th>
+        <th>Company</th>
+        <th>Duration</th>
+        <th>Description</th>
+      </tr>
+      <?php
+        $sql2 = "SELECT job_title, company, start_date, end_date, description FROM work_experience ORDER BY id DESC";
+        $result2 = $conn->query($sql2);
 
+        if (!$result2) {
+          echo "<tr><td colspan='4'>SQL error: {$conn->error}</td></tr>";
+        } elseif ($result2->num_rows > 0) {
+          while ($row = $result2->fetch_assoc()) {
+            echo "<tr>
+                    <td>{$row['job_title']}</td>
+                    <td>{$row['company']}</td>
+                    <td>{$row['start_date']} – {$row['end_date']}</td>
+                    <td>{$row['description']}</td>
+                  </tr>";
+          }
+        } else {
+          echo "<tr><td colspan='4'>No work experience found.</td></tr>";
+        }
+      ?>
+    </table>
+
+    
     <h2>Technical Skills</h2>
-    <p>Languages: Java, Python, JavaScript, HTML, CSS</p>
-    <p>Web Development | IT Support | Networking | Troubleshooting | Data Handling</p>
+    <p><strong>Languages:</strong> Java, Python, JavaScript, HTML, CSS</p>
+    <p>IT Support | Networking | Web Development | Troubleshooting | Data Handling</p>
   </main>
 
+  
   <footer>
     <p>&copy; 2025 Folusho Morafa</p>
   </footer>
 </body>
 </html>
+
+<?php $conn->close(); ?>

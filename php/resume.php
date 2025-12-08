@@ -113,7 +113,7 @@
 </main>
 
 <footer>
-  <p>&copy; 2025 Folusho Morafa</p>
+  <p>&copy; 2025 Folusho Morafa • fmorafa.com</p>
 </footer>
 
 </body>

@@ -29,9 +29,6 @@
         <p class="contact-intro">Have a question or want to reach out? Fill out the form below!</p>
 
         <form action="/php/send_message.php" method="POST" novalidate class="contact-form">
-            
-            <!-- Honeypot Field -->
-            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
 
             <!-- Name -->
             <div class="form-group">
@@ -51,6 +48,9 @@
                 <textarea id="message" name="message" rows="6" required maxlength="2000" placeholder="Type your message here..."></textarea>
             </div>
 
+            <!-- Honeypot Field -->
+            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
+            
             <!-- Submit -->
             <button class="contact-button" type="submit">Send Message</button>
         </form>

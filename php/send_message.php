@@ -1,44 +1,44 @@
 <?php
-// ---------------------------------------------
-// Secure Contact Form Handler — send_message.php
-// ---------------------------------------------
+// ---------------------------------------------------
+// Secure Contact Form Handler
+// ---------------------------------------------------
 
-// Allow only POST requests
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     exit("Method Not Allowed");
 }
 
-// --- SPAM PROTECTION (honeypot field) ---
-if (!empty($_POST["website"])) { // Hidden field; real users leave empty
+// --- Honeypot Anti-Spam ---
+if (!empty($_POST["website"])) {
     exit("Spam detected");
 }
 
-// --- Sanitize and Validate Inputs ---
+// --- Sanitization Function ---
 function clean_input($data) {
     return htmlspecialchars(trim($data), ENT_QUOTES, "UTF-8");
 }
 
+// --- Sanitize Fields ---
 $name = clean_input($_POST["name"] ?? "");
 $email = clean_input($_POST["email"] ?? "");
 $message = clean_input($_POST["message"] ?? "");
 
-// --- Server-Side Field Checks ---
+// --- Required Fields Check ---
 if (empty($name) || empty($email) || empty($message)) {
     exit("Error: All fields are required.");
 }
 
-// --- Validate Email Format ---
+// --- Validate Email ---
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit("Error: Invalid email address.");
 }
 
-// --- Prevent Email Header Injection ---
+// --- Prevent Header Injection ---
 if (preg_match("/[\r\n]/", $email) || preg_match("/[\r\n]/", $name)) {
-    exit("Error: Invalid input detected.");
+    exit("Error: Invalid characters detected.");
 }
 
-// --- Prepare Email ---
+// --- Email Setup ---
 $to = "folusho.morafa@gmail.com";
 $subject = "New Contact Form Message from $name";
 
@@ -52,13 +52,14 @@ $body = "You received a new message from your website contact form:\n\n"
 $headers = "From: noreply@fmorafa.com\r\n";
 $headers .= "Reply-To: $email\r\n";
 
-// --- Send Email ---
+// --- Attempt to Send Email ---
 $sent = mail($to, $subject, $body, $headers);
 
-// --- Output Result ---
+// --- Redirect to Thank-You Page ---
 if ($sent) {
-    echo "Success: Your message has been sent!";
+    header("Location: /thank-you.html");
+    exit();
 } else {
-    echo "Error: Message delivery failed. Please try again later.";
+    exit("Error: Message delivery failed. Please try again later.");
 }
 ?>

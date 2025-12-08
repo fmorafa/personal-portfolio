@@ -24,9 +24,13 @@
   <main class="content">
     <h2>Get in Touch with Me!</h2>
 
-    <!-- This form posts to send_message.php for safe server-side processing. -->
+    <!-- Posts to send_message.php for safe server-side processing. -->
 
-    <form action="php/send_message.php" method="POST" novalidate>
+   <form action="php/send_message.php" method="POST" novalidate>
+
+      <!-- Honeypot Anti-Spam Field-->
+      <input type="text" name="website" style="display:none">
+
       <label for="name">Name:</label>
       <input
         type="text"

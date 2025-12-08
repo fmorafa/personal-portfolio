@@ -10,27 +10,39 @@
 </head>
 
 <body>
-  
-  <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/about.html">About Me</a></li>
-        <li><a href="/php/resume.php" class="active">Resume</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Main Content -->
-  <main class="resume-container">
-    <h1>Resume</h1>
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About Me</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/php/resume.php" class="active">Resume</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-    
+<main class="resume-container">
+  <h1>Resume – Folusho Morafa</h1>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <p>
+      Motivated Computer Science student with experience in IT support, software
+      development, and web technologies. Skilled in troubleshooting, building
+      modern web applications, and optimizing user experiences. Strong background
+      in Python, Java, JavaScript, and full-stack development.
+    </p>
+  </section>
+
+  <section>
     <h2>Education</h2>
-    <p><strong>University of Memphis</strong> – Bachelor of Science in Computer Science (Expected May 2026)</p>
-    <p>Relevant Coursework: Data Structures, Web Development, Networks, Programming Languages (Java, Python)</p>
+    <p><strong>University of Memphis</strong> – B.S. Computer Science (Expected May 2026)</p>
+    <p>Relevant Coursework: Web Development, Data Structures, Networking, Programming Languages</p>
+  </section>
 
-    
+  <section>
     <h2>Certifications</h2>
     <table>
       <tr>
@@ -38,6 +50,7 @@
         <th>Organization</th>
         <th>Year</th>
       </tr>
+
       <?php
         $sql = "SELECT cert_name, organization, year FROM certifications";
         $result = $conn->query($sql);
@@ -57,8 +70,9 @@
         }
       ?>
     </table>
+  </section>
 
-    
+  <section>
     <h2>Work Experience</h2>
     <table>
       <tr>
@@ -67,8 +81,10 @@
         <th>Duration</th>
         <th>Description</th>
       </tr>
+
       <?php
-        $sql2 = "SELECT job_title, company, start_date, end_date, description FROM work_experience ORDER BY id DESC";
+        $sql2 = "SELECT job_title, company, start_date, end_date, description 
+                 FROM work_experience ORDER BY id DESC";
         $result2 = $conn->query($sql2);
 
         if (!$result2) {
@@ -87,17 +103,19 @@
         }
       ?>
     </table>
+  </section>
 
-    
+  <section>
     <h2>Technical Skills</h2>
-    <p><strong>Languages:</strong> Java, Python, JavaScript, HTML, CSS</p>
-    <p>IT Support | Networking | Web Development | Troubleshooting | Data Handling</p>
-  </main>
+    <p><strong>Languages:</strong> Python, Java, JavaScript, HTML, CSS</p>
+    <p><strong>Skills:</strong> Web Development, IT Support, Networking, Troubleshooting</p>
+  </section>
+</main>
 
-  
-  <footer>
-    <p>&copy; 2025 Folusho Morafa</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 Folusho Morafa</p>
+</footer>
+
 </body>
 </html>
 

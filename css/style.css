@@ -13,7 +13,7 @@ body {
 
 /* Sticky part 2 */
 main {
-  flex-grow: 1;
+    flex-grow: 1;
 }
     
 /* Navbar */
@@ -38,17 +38,69 @@ nav li {
     display: inline-block;
 }
 
-nav a {
+nav a, .dropbtn { /* Added to apply base styling */
     color: white;
     margin: 0 12px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
+    /* Added to behave like other links */
+    display: inline-block; 
+    padding: 0; 
 }
 
 nav a.active, 
-nav a:hover {
+nav a:hover,
+.dropdown:hover .dropbtn { /* Added dropdown hover */
     text-decoration: underline;
+}
+
+/* Dropdown Cont */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown link button */
+.dropbtn {
+    /*separate the arrow from other items */
+    margin-right: 20px; 
+    cursor: default;
+}
+
+/* Dropdown Content*/
+.dropdown-content {
+    /* Hide by default */
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    left: 0; 
+    top: 100%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: #222; /* Dark text */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Make links full width */
+    text-align: left;
+    margin: 0; 
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+    text-decoration: none; /* Remove underline for sub-links */
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Hero Section */

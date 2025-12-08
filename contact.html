@@ -1,69 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Me | Folusho Morafa</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="javascript/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me | Folusho Morafa</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="javascript/script.js"></script>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="php/resume.php">Resume</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main class="content">
-    <h2>Get in Touch with Me!</h2>
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About Me</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/php/resume.php">Resume</a></li>
+                <li><a href="/contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Posts to send_message.php for safe server-side processing. -->
+    <!-- CONTACT FORM -->
+    <section class="contact-container">
+        <h2 class="contact-intro">Get in Touch</h2>
+        <p class="contact-intro">Have a question or want to reach out? Fill out the form below!</p>
 
-   <form action="php/send_message.php" method="POST" novalidate>
+        <form action="/php/send_message.php" method="POST" novalidate class="contact-form">
+            
+            <!-- Honeypot Field -->
+            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
 
-      <!-- Honeypot Anti-Spam Field-->
-      <input type="text" name="website" style="display:none">
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required maxlength="100" placeholder="Your full name">
+            </div>
 
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        required
-        maxlength="100"
-      />
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required maxlength="150" placeholder="you@example.com">
+            </div>
 
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        maxlength="150"
-      />
+            <!-- Message -->
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required maxlength="2000" placeholder="Type your message here..."></textarea>
+            </div>
 
-      <label for="message">Message:</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="5"
-        required
-        maxlength="2000"
-      ></textarea>
+            <!-- Submit -->
+            <button class="contact-button" type="submit">Send Message</button>
+        </form>
+    </section>
 
-      <button class="button" type="submit">Send</button>
-    </form>
-  </main>
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2025 Folusho Morafa • fmorafa.com
+    </footer>
 
-  <footer>
-    <p>&copy; 2025 Folusho Morafa • fmorafa.com</p>
-  </footer>
 </body>
 </html>

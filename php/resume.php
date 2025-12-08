@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume | Folusho Morafa</title>
+  <title>Resume</title>
   <link rel="stylesheet" href="/css/style.css" />
   <script defer src="/javascript/script.js"></script>
 </head>

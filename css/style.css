@@ -71,15 +71,19 @@ footer {
 
 /* Contact Page Styling */
 .contact-container {
-    max-width: 700px;
-    margin: 60px auto;
-    padding: 0 20px;
+    /* Increased max-width for more horizontal space */
+    max-width: 800px;
+    /* Added top/bottom padding to container for better separation from header/footer,
+       and kept margin auto for centering */
+    margin: 0 auto;
+    /* Added top and bottom padding for vertical spacing */
+    padding: 60px 20px;
 }
 
 .contact-intro {
     text-align: center;
-    margin-bottom: 25px;
-    font-size: 1.1rem;
+    margin-bottom: 35px; /* Slightly increased margin for better separation */
+    font-size: 1.2rem; /* Slightly larger font for prominence */
     color: #444;
 }
 
@@ -92,24 +96,33 @@ footer {
 }
 
 .form-group {
-    display: flex;
+    /* Flex is good, but is not needed since the elements already behave as block with 100% width */
+    /* Keeping for clarity, but you could simplify this to just margin-bottom */
     flex-direction: column;
-    margin-bottom: 18px;
+    margin-bottom: 25px; /* Increased space between form groups (Name, Email, Message) */
 }
 
 .form-group label {
     font-weight: 600;
     margin-bottom: 6px;
     color: #222;
+    display: block; /* Ensure label is a block element above the input */
 }
 
 .form-group input,
 .form-group textarea {
+    /* Added width: 100% and box-sizing for clear full-width behavior */
+    width: 100%;
+    box-sizing: border-box; 
     padding: 12px 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.2s ease;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resize only */
 }
 
 .form-group input:focus,
@@ -120,7 +133,13 @@ footer {
 }
 
 .contact-button {
-    width: 100%;
+    /* Reduced button width to make it look like a clear call-to-action, not a field */
+    width: 250px; 
+    /* Centered the button */
+    margin: 20px auto 0 auto; 
+    /* Must be display: block to center with margin: auto */
+    display: block; 
+    
     padding: 14px;
     background-color: #0077cc;
     color: white;
@@ -152,11 +171,19 @@ footer {
 /* Responsive for Contact Form */
 @media (max-width: 640px) {
     .contact-container {
-        margin: 30px 20px;
-        padding: 0 10px;
+        /* Reduced vertical padding on mobile, removed horizontal margin */
+        padding: 40px 10px;
+        margin: 0 auto;
     }
 
     .contact-form {
         padding: 30px 20px;
+        /* Revert button to full width on small screens for better usability */
+        width: 100%;
+    }
+    
+    .contact-button {
+        width: 100%; /* Full width button on mobile */
+        margin: 20px 0 0 0; /* No horizontal margin needed */
     }
 }

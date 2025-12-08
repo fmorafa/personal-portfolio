@@ -8,37 +8,58 @@
   <script defer src="javascript/script.js"></script>
 </head>
 
-<header>
-  <nav class="navbar">
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/about.html">About Me</a></li>
-      <li><a href="/projects.html">Projects</a></li>
-      <li><a href="/php/resume.php">Resume</a></li>
-      <li><a href="/contact.html" class="active">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="php/resume.php">Resume</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="content">
+  <main class="content">
     <h2>Get in Touch with Me!</h2>
-    <form action="mailto:folusho.morafa@gmail.com" method="post" enctype="text/plain">
-        <label>Name:</label>
-        <input type="text" name="name" required>
 
-        <label>Email:</label>
-        <input type="email" name="email" required>
+    <!-- This form posts to send_message.php for safe server-side processing. -->
 
-        <label>Message:</label>
-        <textarea name="message" rows="5" required></textarea>
+    <form action="php/send_message.php" method="POST" novalidate>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        maxlength="100"
+      />
 
-        <button class="button" type="submit">Send</button>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        maxlength="150"
+      />
+
+      <label for="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        required
+        maxlength="2000"
+      ></textarea>
+
+      <button class="button" type="submit">Send</button>
     </form>
-</section>
+  </main>
 
-<footer>
+  <footer>
     <p>&copy; 2025 Folusho Morafa • fmorafa.com</p>
-</footer>
-
+  </footer>
 </body>
 </html>

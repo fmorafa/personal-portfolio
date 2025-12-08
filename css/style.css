@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
     background: #f8faff;
     color: #222;
-    line-height: 1.6; /* improved readability */
+    line-height: 1.6;
 }
 
 /* =========================================
@@ -49,31 +49,22 @@ nav a:hover {
 /* =========================================
    3. Home Page & Hero Section
    ========================================= */
-/* Container for the intro content */
 .intro {
     text-align: center;
+    /* CHANGE: Reduced max-width to 600px to emulate mobile width */
+    max-width: 600px;
     padding: 60px 20px;
-    max-width: 800px;
     margin: 0 auto;
 }
 
-/* LinkedIn-style Circular Profile Image */
 .profile-img {
-    /* Fixed equal width/height for perfect circle */
     width: 200px;
     height: 200px;
-    
-    /* Makes the shape circular */
     border-radius: 50%;
-    
-    /* Ensures image covers area without distortion */
     object-fit: cover;
-    object-position: center top; /* Focuses on the face */
-    
-    /* White border and shadow for pop */
+    object-position: center top;
     border: 6px solid white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    
     margin-bottom: 25px;
 }
 
@@ -88,7 +79,6 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
-/* Button Styling (General & Hero) */
 .btn, .button {
     display: inline-block;
     background: #0b3d91;
@@ -109,8 +99,9 @@ nav a:hover {
    4. Projects & General Content
    ========================================= */
 .content {
-    padding: 40px;
-    max-width: 850px;
+    padding: 40px 20px;
+    /* CHANGE: Reduced max-width to 600px for consistency */
+    max-width: 600px;
     margin: auto;
 }
 
@@ -130,7 +121,8 @@ nav a:hover {
    5. Contact Page Styling
    ========================================= */
 .contact-container {
-    max-width: 800px;
+    /* CHANGE: Reduced max-width to 550px for a "mobile card" feel */
+    max-width: 550px;
     margin: 0 auto;
     padding: 60px 20px;
 }
@@ -187,9 +179,11 @@ nav a:hover {
 
 /* Contact Submit Button */
 .contact-button {
-    width: 250px; 
-    margin: 20px auto 0 auto; 
+    /* CHANGE: Made button width 100% to match mobile style */
+    width: 100%; 
+    margin: 20px 0 0 0; 
     display: block;
+    
     padding: 14px;
     background-color: #0077cc;
     color: white;
@@ -208,8 +202,6 @@ nav a:hover {
 /* =========================================
    6. Utilities & Animations
    ========================================= */
-
-/* Honeypot Field - Hidden safely from users but visible to DOM */
 .hp-field {
     position: absolute;
     left: -9999px;
@@ -220,7 +212,6 @@ nav a:hover {
     pointer-events: none;
 }
 
-/* Fade-in Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -240,25 +231,18 @@ footer {
 /* =========================================
    8. Responsive Design
    ========================================= */
+/* Even though we matched desktop to mobile, we keep this for very small screens */
 @media (max-width: 640px) {
-    /* Hero Image smaller on mobile */
     .profile-img {
         width: 160px;
         height: 160px;
     }
 
-    /* Contact Form Adjustments */
     .contact-container {
         padding: 40px 10px;
-        margin: 0 auto;
     }
 
     .contact-form {
         padding: 30px 20px;
-    }
-    
-    .contact-button {
-        width: 100%;
-        margin: 20px 0 0 0;
     }
 }

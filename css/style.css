@@ -1,17 +1,22 @@
-/* =========================================
-   1. Global & Reset Styles
-   ========================================= */
+/* Global Styling */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f8faff;
     color: #222;
     line-height: 1.6;
+    /*Sticky footer (About page)*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* =========================================
-   2. Navigation Bar
-   ========================================= */
+/* Sticky part 2 */
+main {
+  flex-grow: 1;
+}
+    
+/* Navbar */
 header {
     background: #0b3d91;
     color: white;
@@ -46,12 +51,9 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* =========================================
-   3. Home Page & Hero Section
-   ========================================= */
+/* Hero Section */
 .intro {
     text-align: center;
-    /* CHANGE: Reduced max-width to 600px to emulate mobile width */
     max-width: 600px;
     padding: 60px 20px;
     margin: 0 auto;
@@ -95,12 +97,10 @@ nav a:hover {
     background: #005fa3;
 }
 
-/* =========================================
-   4. Projects & General Content
-   ========================================= */
+/*Projects */
 .content {
     padding: 40px 20px;
-    /* CHANGE: Reduced max-width to 600px for consistency */
+    /*consistency */
     max-width: 600px;
     margin: auto;
 }
@@ -117,11 +117,9 @@ nav a:hover {
     color: #4fc3ff;
 }
 
-/* =========================================
-   5. Contact Page Styling
-   ========================================= */
+/* Contact Page */
 .contact-container {
-    /* CHANGE: Reduced max-width to 550px for a "mobile card" feel */
+    /* CHANGE: Reduced max-width to 550px ("mobile card" style) */
     max-width: 550px;
     margin: 0 auto;
     padding: 60px 20px;
@@ -177,9 +175,9 @@ nav a:hover {
     outline: none;
 }
 
-/* Contact Submit Button */
+/* Contact Submit */
 .contact-button {
-    /* CHANGE: Made button width 100% to match mobile style */
+    /* Change width to match mobile style */
     width: 100%; 
     margin: 20px 0 0 0; 
     display: block;
@@ -199,9 +197,7 @@ nav a:hover {
     background-color: #005fa3;
 }
 
-/* =========================================
-   6. Utilities & Animations
-   ========================================= */
+/* Animations */
 .hp-field {
     position: absolute;
     left: -9999px;
@@ -217,9 +213,7 @@ nav a:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================================
-   7. Footer
-   ========================================= */
+/* Footer */
 footer {
     background: #0b3d91;
     color: white;
@@ -228,10 +222,8 @@ footer {
     margin-top: 40px;
 }
 
-/* =========================================
-   8. Responsive Design
-   ========================================= */
-/* Even though we matched desktop to mobile, we keep this for very small screens */
+
+/* Keep this for very small screens */
 @media (max-width: 640px) {
     .profile-img {
         width: 160px;

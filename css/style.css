@@ -157,20 +157,12 @@ footer {
 /* Honeypot Field - Hidden from Users */
 /* Recommended Honeypot Hiding */
 .hp-field {
-    /* Ensures the field cannot be focused via keyboard navigation */
-    position: absolute;
-    /* Sets the input field size to zero */
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: 0;
-    /* Moves the field off-screen */
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-    /* Prevents the browser from suggesting autofill values */
-    opacity: 0;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
 }
+
 
 /* Fade-in Animation */
 @keyframes fadeIn {

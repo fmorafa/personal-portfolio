@@ -192,7 +192,7 @@ nav a:hover,
 }
 
 /*Projects */
-.content {
+.content-container {
     padding: 40px 20px;
     /*consistency */
     max-width: 600px;
@@ -321,16 +321,15 @@ nav a:hover,
 /* Animations */
 
 .page-fade {
-    opacity: 0;
     animation: fadeIn 0.5s ease-in-out;
-    animation-delay: 0.15s;
+    
 }
 
 .resume-container section {
     opacity: 0;
     animation: fadeInSection 0.7s ease-out forwards;
-    animation-delay: 0.15s;
     transform: translateY(10px);
+    animation-delay: 0.15s;
 }
 
 @keyframes fadeInSection {

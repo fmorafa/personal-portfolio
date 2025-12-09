@@ -169,6 +169,32 @@ nav a:hover,
     color: #4fc3ff;
 }
 
+/*Project Filtering  */
+.filter-btn-container {
+  margin: 20px 0;
+}
+
+.filter-btn {
+  padding: 10px 18px;
+  border: none;
+  margin-right: 10px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.filter-btn:hover {
+  background-color: #d0d0d0;
+}
+
+.filter-btn.active {
+  background-color: #4b75f6;
+  color: white;
+  transform: scale(1.05);
+}
+
 /* Contact Page */
 .contact-container {
     /* CHANGE: Reduced max-width to 550px ("mobile card" style) */

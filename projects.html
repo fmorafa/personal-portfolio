@@ -23,48 +23,48 @@
 
   <main class="content">
 
-    <h1>Computer Science Projects (to Date):</h1>
+  <h1>Computer Science Projects (to Date):</h1>
 
-    <div class="project">
-      <h3>TradeX – eCommerce & Auction Platform (Django)</h3>
-      <p>
-        A Django-based marketplace including auctions, bidding, product listings,
-        and user authentication. Built with UML modeling and PostgreSQL.
-      </p>
-    </div>
+  <!-- Filter Buttons -->
+  <div class="filter-btn-container">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="django">Django</button>
+    <button class="filter-btn" data-category="rails">Rails</button>
+    <button class="filter-btn" data-category="python">Python</button>
+  </div>
 
-    <div class="project">
-      <h3>Film Festival Management System (Rails)</h3>
-      <p>
-        Ruby on Rails CRUD system for film submissions with real-time JavaScript
-        search, staff management, and a PostgreSQL backend.
-      </p>
-    </div>
+  <div class="project" data-category="django">
+    <h3>TradeX – eCommerce & Auction Platform (Django)</h3>
+    <p>
+      A Django-based marketplace including auctions, bidding, product listings,
+      and user authentication. Built with UML modeling and PostgreSQL.
+    </p>
+  </div>
 
-    <div class="project">
-      <h3>Haunted Hotel Reservation System (Rails)</h3>
-      <p>
-        A themed reservation and staff management system using two independent
-        Rails models: <strong>Bookings</strong> and <strong>Staff Members</strong>. Includes booking validation,
-        sorting, filtering, and interactive UI elements styled to reflect a
-        haunted hotel experience. Developed using MVC principles and PostgreSQL.
-      </p>
-    </div>
+  <div class="project" data-category="rails">
+    <h3>Film Festival Management System (Rails)</h3>
+    <p>
+      Ruby on Rails CRUD system for film submissions with real-time JavaScript
+      search, staff management, and a PostgreSQL backend.
+    </p>
+  </div>
 
-    <div class="project">
-      <h3>Networking Interface – Multi-Client Chat Application (Python)</h3>
-      <p>
-        A Python networking application built with <strong>socket</strong> and <strong>threading</strong> to
-        support multiple simultaneous client connections. Messages are broadcast
-        to all active users through a centralized server.
-      </p>
-      <p>
-        The client application implements a Tkinter GUI for message input and
-        display. Users connect by supplying the server’s IPv4 address and port,
-        enabling interactive messaging across multiple clients.
-      </p>
-    </div>
-  </main>
+  <div class="project" data-category="rails">
+    <h3>Haunted Hotel Reservation System (Rails)</h3>
+    <p>
+      A themed reservation and staff management system using two independent
+      Rails models. Includes validation, filtering, and interactive UI features.
+    </p>
+  </div>
+
+  <div class="project" data-category="python">
+    <h3>Networking Interface – Multi-Client Chat Application (Python)</h3>
+    <p>
+      A Python networking application using sockets + threading to support multiple clients.
+    </p>
+  </div>
+
+</main>
 
   <footer>
     <p>&copy; 2025 Folusho Morafa • fmorafa.com</p>

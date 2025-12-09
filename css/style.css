@@ -149,6 +149,48 @@ nav a:hover,
     background: #005fa3;
 }
 
+/*Resume Page and Tables*/
+
+.resume-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* horizontal scrolling on mobile */
+.resume-table-wrapper {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+/* Clean table style */
+.resume-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;  /* prevent squishing on screens */
+}
+
+.resume-table-wrapper th,
+.resume-table-wrapper td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.resume-table-wrapper th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.resume-table-wrapper tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.resume-table-wrapper tr:hover {
+    background-color: #f1f1f1;
+}
+
 /*Projects */
 .content {
     padding: 40px 20px;
@@ -276,6 +318,19 @@ nav a:hover,
 }
 
 /* Animations */
+
+.resume-container section {
+    opacity: 0;
+    animation: fadeInSection 0.7s ease-out forwards;
+    animation-delay: 0.15s;
+    transform: translateY(10px);
+}
+
+@keyframes fadeInSection {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 .hp-field {
     position: absolute;
     left: -9999px;
@@ -314,5 +369,13 @@ footer {
 
     .contact-form {
         padding: 30px 20px;
+    }
+
+    .resume-container {
+        padding: 15px;
+    }
+
+    .resume-table-wrapper table {
+        font-size: 14px;
     }
 }

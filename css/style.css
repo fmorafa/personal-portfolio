@@ -321,7 +321,8 @@ nav a:hover,
 /* Animations */
 
 .page-fade {
-    animation: fadeIn 0.5s ease-in-out;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.5s ease-in-out forwards;
     
 }
 

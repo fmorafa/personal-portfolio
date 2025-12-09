@@ -6,6 +6,7 @@ body {
     color: #222;
     line-height: 1.6;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 
@@ -164,10 +165,10 @@ nav a:hover,
 
 /*Projects */
 .content-container {
-    padding: 40px 20px;
-    /*consistency */
-    max-width: 600px;
-    margin: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 70vh; /* Ensures footer stays low */
 }
 
 .project {

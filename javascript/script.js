@@ -3,15 +3,6 @@ document.querySelectorAll('.navbar a').forEach(link => {
 });
 console.log("Welcome to Folusho Morafa’s personal website!");
 
-// Apply fade-in to main section
-document.addEventListener("DOMContentLoaded", () => {
-  const main = document.querySelector("main");
-  if (main) {
-    main.classList.add("fade-in");
-  }
-});
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projects = document.querySelectorAll(".project");
@@ -36,4 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+});
+
+
+// Apply fade-in to main section
+document.addEventListener("DOMContentLoaded", () => {
+  const main = document.querySelector("main");
+  if (main) {
+    main.classList.add("fade-in");
+  }
 });

@@ -30,10 +30,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// Apply fade-in to main section
-document.addEventListener("DOMContentLoaded", () => {
-  const main = document.querySelector("main");
-  if (main) {
-    main.classList.add("fade-in");
-  }
-});

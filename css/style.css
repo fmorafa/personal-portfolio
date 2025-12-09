@@ -258,6 +258,7 @@ nav a:hover,
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     animation: fadeIn 0.5s ease-in-out;
+    animation-delay: 0.15s;
 }
 
 .form-group {
@@ -318,6 +319,11 @@ nav a:hover,
 }
 
 /* Animations */
+
+.page-fade {
+    animation: fadeIn 0.5s ease-in-out;
+    animation-delay: 0.15s;
+}
 
 .resume-container section {
     opacity: 0;
